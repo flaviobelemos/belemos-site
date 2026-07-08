@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belemos Empilhadeiras | Manutenção em São Paulo</title>
+  <meta name="description" content="Manutenção preventiva, corretiva, peças e atendimento emergencial para empilhadeiras em São Paulo e Interior.">
+  <meta name="keywords" content="empilhadeiras, manutenção, São Paulo, peças, serviço técnico">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.95);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 2px solid #f4b400;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #f4b400;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #f4b400;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 70px;
+      min-height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('https://images.unsplash.com/photo-1617957743096-2f3d8f5f4f07?q=80&w=1600&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #f4b400;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #1fa855;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-secondary {
+      background: #f4b400;
+      color: #000;
+    }
+
+    .btn-secondary:hover {
+      background: #d4941a;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section:nth-child(even) {
+      background: #1a1a1a;
+    }
+
+    h2 {
+      color: #f4b400;
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 36px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: #f4b400;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* Cards Grid */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #242424;
+      padding: 40px 30px;
+      border: 1px solid #333;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border-left: 4px solid #f4b400;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(244, 180, 0, 0.2);
+      border-left: 4px solid #25D366;
+    }
+
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #f4b400;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    /* Brands Section */
+    .brands-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .brand-item {
+      background: #242424;
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .brand-item:hover {
+      background: #f4b400;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat {
+      padding: 30px;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      color: #f4b400;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    /* Contact Section */
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      background: #242424;
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid #f4b400;
+      text-align: center;
+    }
+
+    .contact-card h3 {
+      color: #f4b400;
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #f4b400;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      background: #1a1a1a;
+      color: white;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #f4b400;
+      box-shadow: 0 0 5px rgba(244, 180, 0, 0.3);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 50px 20px 20px;
+      border-top: 2px solid #f4b400;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .footer-section h4 {
+      color: #f4b400;
+      margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #f4b400;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #f4b400;
+      color: #000;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+
+    .social-links a:hover {
+      background: #25D366;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+    }
+
+    /* Animações */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">🏗️ BELEMOS EMPILHADEIRAS</div>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Manutenção de Empilhadeiras com Agilidade e Confiança</h1>
+      <p>Atendimento especializado em São Paulo e Interior. Preventiva, corretiva, venda de peças e atendimento emergencial para manter sua operação em movimento.</p>
+      <div>
+        <a class="btn" href="https://wa.me/5511941503666?text=Olá! Gostaria de um orçamento para manutenção de empilhadeiras." target="_blank">📞 Solicitar Orçamento</a>
+        <a class="btn btn-secondary" href="#contato">✉️ Enviar Mensagem</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços -->
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🔧</div>
+        <h3>Manutenção Preventiva</h3>
+        <p>Inspeções periódicas e manutenções programadas para evitar paradas inesperadas e prolongar a vida útil do equipamento.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚙️</div>
+        <h3>Manutenção Corretiva</h3>
+        <p>Diagnóstico rápido e reparos especializados por técnicos experientes. Solucionamos problemas com agilidade.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛠️</div>
+        <h3>Fornecimento de Peças</h3>
+        <p>Peças originais e de qualidade para diversas marcas e modelos. Estoque atualizado e entrega rápida.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🚨</div>
+        <h3>Atendimento Emergencial</h3>
+        <p>Serviço 24/7 para emergências. Resposta rápida para minimizar o tempo de máquina parada.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estatísticas -->
+  <section>
+    <h2>Por Que Escolher a Belemos?</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Anos de Experiência</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">500+</div>
+        <div class="stat-label">Clientes Satisfeitos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Marcas Atendidas</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">24h</div>
+        <div class="stat-label">Suporte Emergencial</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marcas Atendidas -->
+  <section id="marcas">
+    <h2>Marcas Atendidas</h2>
+    <div class="brands-grid">
+      <div class="brand-item">Equipmax</div>
+      <div class="brand-item">Toyota</div>
+      <div class="brand-item">Yale</div>
+      <div class="brand-item">Hyster</div>
+      <div class="brand-item">Still</div>
+      <div class="brand-item">Clark</div>
+      <div class="brand-item">Mitsubishi</div>
+      <div class="brand-item">Komatsu</div>
+      <div class="brand-item">Nissan</div>
+    </div>
+  </section>
+
+  <!-- Área de Atendimento -->
+  <section id="sobre">
+    <h2>Área de Atendimento</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon">📍</div>
+        <h3 style="color: #f4b400; margin-bottom: 10px;">São Paulo Capital</h3>
+        <p>Toda a região da capital com resposta rápida.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">📍</div>
+        <h3 style="color: #f4b400; margin-bottom: 10px;">Grande São Paulo</h3>
+        <p>Região metropolitana incluindo ABC Paulista.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-icon">📍</div>
+        <h3 style="color: #f4b400; margin-bottom: 10px;">Interior Paulista</h3>
+        <p>Cidades do interior com agendamento prévio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <div class="contact-info">
+      <div class="contact-card">
+        <h3>📞 Telefone</h3>
+        <p><a href="tel:+5511941503666" style="color: #25D366; text-decoration: none;">(11) 94150-3666</a></p>
+        <p style="font-size: 12px; color: #999; margin-top: 10px;">Chamadas e WhatsApp</p>
+      </div>
+      <div class="contact-card">
+        <h3>📧 Email</h3>
+        <p><a href="mailto:contato@belemos.com.br" style="color: #25D366; text-decoration: none;">contato@belemos.com.br</a></p>
+        <p style="font-size: 12px; color: #999; margin-top: 10px;">Resposta em até 2 horas</p>
+      </div>
+      <div class="contact-card">
+        <h3>📍 Localização</h3>
+        <p>Várzea Paulista - SP</p>
+        <p style="font-size: 12px; color: #999; margin-top: 10px;">Próximo a São Paulo Capital</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px; background: #1a1a1a; padding: 40px; border-radius: 12px;">
+      <h3 style="color: #f4b400; margin-bottom: 30px; text-align: center;">Envie-nos uma Mensagem</h3>
+      <form>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+          <div class="form-group">
+            <label>Nome Completo *</label>
+            <input type="text" required placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" required placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label>Telefone/WhatsApp *</label>
+            <input type="tel" required placeholder="(11) 9XXXX-XXXX">
+          </div>
+          <div class="form-group">
+            <label>Empresa</label>
+            <input type="text" placeholder="Nome da empresa">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Assunto *</label>
+          <input type="text" required placeholder="Como podemos ajudar?">
+        </div>
+        <div class="form-group">
+          <label>Mensagem *</label>
+          <textarea required placeholder="Descreva sua necessidade..."></textarea>
+        </div>
+        <button type="submit" class="btn" style="width: 100%; cursor: pointer;">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>BELEMOS EMPILHADEIRAS</h4>
+        <p>Especializada em manutenção, reparos e fornecimento de peças para empilhadeiras em São Paulo e região.</p>
+        <div class="social-links">
+          <a href="https://wa.me/5511941503666" target="_blank" title="WhatsApp">W</a>
+          <a href="tel:+5511941503666" title="Telefone">T</a>
+          <a href="mailto:contato@belemos.com.br" title="Email">E</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#servicos">Manutenção Preventiva</a></li>
+          <li><a href="#servicos">Manutenção Corretiva</a></li>
+          <li><a href="#servicos">Fornecimento de Peças</a></li>
+          <li><a href="#servicos">Atendimento Emergencial</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Informações</h4>
+        <ul>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#marcas">Marcas Atendidas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="https://wa.me/5511941503666" target="_blank">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contato</h4>
+        <p>📍 Várzea Paulista - SP</p>
+        <p>📞 <a href="tel:+5511941503666" style="color: #f4b400; text-decoration: none;">(11) 94150-3666</a></p>
+        <p>✉️ <a href="mailto:contato@belemos.com.br" style="color: #f4b400; text-decoration: none;">contato@belemos.com.br</a></p>
+        <p style="font-size: 12px; margin-top: 15px; color: #666;">Atendimento: Seg-Sex 8h-18h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Belemos Empilhadeiras. Todos os direitos reservados. | Desenvolvido com ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Obrigado! Sua mensagem foi enviada. Entraremos em contato em breve!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
